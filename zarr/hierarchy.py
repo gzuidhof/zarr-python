@@ -1076,6 +1076,8 @@ def group(store=None, overwrite=False, chunk_store=None,
 
     # handle polymorphic store arg
     store = _normalize_store_arg(store)
+    if chunk_store is not None:
+        chunk_store = _normalize_store_arg(chunk_store)
     path = normalize_storage_path(path)
 
     # require group
